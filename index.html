@@ -125,10 +125,17 @@
             overflow: hidden;
         }
 
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.15;
+        }
+
         .hero-content {
             position: relative;
             z-index: 1;
-            text-align: center;
         }
 
         .hero h1 {
@@ -151,37 +158,57 @@
         .hero p {
             font-size: 1.2rem;
             max-width: 600px;
-            margin: 0 auto 40px auto;
+            margin-bottom: 40px;
             opacity: 0;
             transform: translateY(30px);
             animation: fadeUp 1s forwards 0.9s;
         }
 
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--accent);
+            color: white;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s forwards 1.2s;
+        }
+
+        .btn:hover {
+            background: #ff8383;
+            transform: translateY(-3px);
+        }
+
         .social-links {
             display: flex;
-            justify-content: center;
             gap: 15px;
             margin-top: 30px;
             opacity: 0;
             animation: fadeUp 1s forwards 1.5s;
         }
 
-        .social-icon {
+        .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             color: white;
             transition: var(--transition);
         }
 
-        .social-icon:hover {
+        .social-links a:hover {
             background: var(--accent);
             transform: translateY(-3px);
         }
+
         /* About Section */
         .section {
             padding: 100px 0;
@@ -307,7 +334,7 @@
         /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
         }
 
@@ -339,7 +366,7 @@
         .project-card:hover .project-image img {
             transform: scale(1.1);
         }
-
+        
         .project-content {
             padding: 20px;
         }
@@ -815,15 +842,9 @@
             <p>Enthusiastic Machine Learning Engineer with a strong foundation in software development and hands-on experience as a Developer Intern. Passionate about Deep Learning, with a keen interest in applying AI techniques to real-world challenges.</p>
             <a href="#contact" class="btn">Get In Touch</a>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/alna-pm-065980265" target="_blank" class="social-icon">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/ALNA-PM" target="_blank" class="social-icon">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:alna.pm.aiml.2022@gmail.com" class="social-icon">
-                    <i class="fas fa-envelope"></i>
-                </a>
+                <a href="https://www.linkedin.com/in/alna-pm-065980265" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/ALNA-PM" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:alna.pm.aiml.2022@gmail.com"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </section>
@@ -834,7 +855,7 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-grid">
                 <div class="about-image">
-                    <img src="https://via.placeholder.com/600" alt="Alna PM">
+                    <img src="images/profile.jpg" alt="Alna PM">
                 </div>
                 <div class="about-content">
                     <h3>Hello, I'm Alna PM</h3>
@@ -995,18 +1016,100 @@
             <h2 class="section-title">My Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x300" alt="AI Trainer">
-                    </div>
+                    
+                    
                     <div class="project-content">
-                        <h3>AI Trainer</h3>
-                        <p>A comprehensive platform for communication development to placement assistance, leveraging AI technologies to guide users through their learning journey.</p>
+                        <h3>AI HR Assessment</h3>
+                        <p>Documented workflow, developed automated resume and job description analysis, and provided approval options via email.</p>
                         <div class="project-links">
-                            <a href="https://github.com/ALNA-PM/AI-HR" target="_blank"><i class="fas fa-link"></i> View Project</a>
                             <a href="https://github.com/ALNA-PM/AI-HR" target="_blank"><i class="fab fa-github"></i> Source Code</a>
                         </div>
                     </div>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Chat Room Application</h3>
+                            <p>Developed a chat room displaying user names and their messages.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/ALNA-PM/Chat-room" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Assessment Platform with MongoDB</h3>
+                            <p>Created an assessment platform that fetches results with correct answers and explanations.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/ALNA-PM/Test" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Paragraph Expander and Acronym Generator</h3>
+                            <p>Completed features using Django and Gemini API integrations.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/ALNA-PM/Paragraph-expander-and-acronym-generator" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Project Showcasing Application</h3>
+                            <p>Developed a platform to display projects and analyzed how to move forward with it.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/ALNA-PM/Project-showcasing-Application" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>English Learning Platform</h3>
+                            <p>Developed an English learning application with AI feedback for various parameters.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/ALNA-PM/english-learning" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>To-Do List Application</h3>
+                            <p>Built a Django application for creating to-do lists.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/ALNA-PM/Todo_project" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Blogging Platform</h3>
+                            <p>Developed a platform for creating blog posts and publishing, with commenting functionality.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/ALNA-PM/Blog_app" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Movie Review Platform</h3>
+                            <p>Fetched movie data from IMDB, allowing users to provide ratings and feedback.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/ALNA-PM/Movie_reviews" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Event Management</h3>
+                            <p>Developed a platform for managing event tickets and availability.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/ALNA-PM/EventManagement" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </section>
+            
                 <!-- Add more project cards as needed -->
             </div>
         </div>
@@ -1031,7 +1134,7 @@
                     <div class="timeline-content">
                         <h3>InMakes InfoTech Pvt. Ltd</h3>
                         <h4>AI & ML Intern</h4>
-                        <p class="timeline-date">Oct 2024 - Present</p>
+                        <p class="timeline-date">01 July - 23 July 2024</p>
                         <p>Working with AI frameworks like TensorFlow, PyTorch, and Hugging Face Transformers.</p>
                     </div>
                 </div>
